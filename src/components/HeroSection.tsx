@@ -66,9 +66,9 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="text-gradient">Cybersecurity Expert</span>
+          <span className="text-gradient">Cybersecurity & Linux</span>
           <br />
-          <span className="text-foreground">& Linux Specialist</span>
+          <span className="text-foreground">Full-Stack Developer</span>
         </motion.h1>
 
         <motion.p
@@ -77,8 +77,8 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Vice President | Passionate about cybersecurity, Linux systems, 
-          and cloud technologies. Protecting digital infrastructure with innovative solutions.
+          Vice President | Specializing in cybersecurity, Linux systems, 
+          and full-stack development. Building secure digital solutions with modern technologies.
         </motion.p>
 
         <motion.div
