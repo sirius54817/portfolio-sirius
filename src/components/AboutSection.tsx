@@ -45,7 +45,7 @@ const AboutSection = () => {
               <p>
                 Hello! I'm <strong className="text-foreground">Nuthalapati Veera Venkata Naga Sai</strong>, 
                 a passionate cybersecurity expert and Linux specialist currently serving as 
-                <strong className="text-primary"> Vice President</strong>.
+                <strong className="text-primary"> Vice President @OWASPKARE</strong>.
               </p>
               
               <p>

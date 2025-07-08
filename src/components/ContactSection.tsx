@@ -31,7 +31,7 @@ Email: ${formData.email}
 Message:
 ${formData.message}
     `);
-    window.location.href = `mailto:sirius54817@example.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:nsai54817@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const contactMethods = [
@@ -48,7 +48,7 @@ ${formData.message}
       title: 'Email',
       description: 'Send me a message',
       action: 'Send Email',
-      link: 'mailto:sirius54817@example.com',
+      link: 'mailto:nsai54817@gmail.com',
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
@@ -246,10 +246,10 @@ ${formData.message}
                 <p className="text-sm text-muted-foreground">
                   Prefer email? Reach out directly at{' '}
                   <a 
-                    href="mailto:sirius54817@example.com" 
+                    href="mailto:nsai54817@gmail.com" 
                     className="text-primary hover:text-primary-glow transition-colors"
                   >
-                    sirius54817@example.com
+                    nsai54817@gmail.com
                   </a>
                 </p>
               </div>
