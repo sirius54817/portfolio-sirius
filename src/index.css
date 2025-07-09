@@ -178,4 +178,30 @@
     display: inline-block;
     transform-origin: center bottom;
   }
+
+  /* SVG Loading Animation Styles */
+  svg polygon {
+    transform-origin: center;
+    filter: drop-shadow(0 0 10px hsl(265, 85%, 65%, 0.5));
+  }
+
+  svg feTurbulence,
+  svg feDisplacementMap {
+    transition: all 0.3s ease;
+  }
+
+  /* Loading Animation Styles */
+  .loading-text span {
+    display: inline-block;
+    transform-origin: center bottom;
+  }
+
+  /* Enhanced SVG animations */
+  #loadingPolygon {
+    transform-origin: 50% 50%;
+  }
+
+  #secondaryPolygon {
+    transform-origin: 50% 50%;
+  }
 }

@@ -15,6 +15,24 @@ const HeroSection = () => {
 
   // Initialize anime.js animations after component mounts
   React.useEffect(() => {
+    // SVG Loading Animation - Turbulence and Displacement Map
+    animate(['feTurbulence', 'feDisplacementMap'], {
+      baseFrequency: .05,
+      scale: 15,
+      alternate: true,
+      loop: true,
+      duration: 2000
+    });
+
+    // SVG Polygon Animation
+    animate('polygon', {
+      points: '64 68.64 8.574 100 63.446 67.68 64 4 64.554 67.68 119.426 100',
+      alternate: true,
+      loop: true,
+      duration: 3000,
+      ease: 'easeInOutSine'
+    });
+
     // Animate the first line "Cybersecurity & Linux"
     animate('.cyber-text span', {
       // Property keyframes
@@ -84,6 +102,52 @@ const HeroSection = () => {
             }}
           />
         ))}
+        
+        {/* SVG Loading Animation */}
+        <div className="absolute top-20 right-20 w-32 h-32 opacity-70">
+          <svg viewBox="0 0 128 128" className="w-full h-full">
+            <defs>
+              <filter id="turbulence">
+                <feTurbulence 
+                  baseFrequency="0.02" 
+                  numOctaves="3" 
+                  result="noise"
+                />
+                <feDisplacementMap 
+                  in="SourceGraphic" 
+                  in2="noise" 
+                  scale="5"
+                />
+              </filter>
+            </defs>
+            <polygon 
+              points="64 68.64 8.574 100 63.446 67.68 64 4 64.554 67.68 119.426 100"
+              fill="none"
+              stroke="url(#gradient)"
+              strokeWidth="2"
+              filter="url(#turbulence)"
+            />
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(265, 85%, 65%)" />
+                <stop offset="100%" stopColor="hsl(280, 100%, 70%)" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        
+        {/* Additional Loading Shapes */}
+        <div className="absolute bottom-32 left-16 w-24 h-24 opacity-60">
+          <svg viewBox="0 0 128 128" className="w-full h-full">
+            <polygon 
+              points="64 8 8 120 120 120"
+              fill="none"
+              stroke="hsl(280, 100%, 70%)"
+              strokeWidth="1.5"
+              opacity="0.8"
+            />
+          </svg>
+        </div>
       </div>
 
       {/* Main Content */}
