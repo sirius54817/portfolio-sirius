@@ -171,9 +171,9 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="cyber-text text-foreground">
+          <div className="cyber-text text-white font-bold" style={{ color: 'white', fontSize: 'inherit' }}>
             {'Cybersecurity & Linux'.split('').map((char, index) => (
-              <span key={index} className="inline-block">
+              <span key={index} className="inline-block text-white">
                 {char === ' ' ? '\u00A0' : char}
               </span>
             ))}
