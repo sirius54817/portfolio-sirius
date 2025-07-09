@@ -17,33 +17,37 @@ const HeroSection = () => {
   React.useEffect(() => {
     // Animate the first line "Cybersecurity & Linux"
     animate('.cyber-text span', {
+      // Property keyframes
       y: [
         { to: '-2.75rem', ease: 'outExpo', duration: 600 },
         { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
       ],
+      // Property specific parameters
       rotate: {
         from: '-1turn',
         delay: 0
       },
-      delay: (_, i) => i * 100,
+      delay: (_, i) => i * 50, // Function based value
       ease: 'inOutCirc',
-      loopDelay: 3000,
+      loopDelay: 1000,
       loop: true
     });
 
     // Animate the second line "Full-Stack Developer"
     animate('.fullstack-text span', {
+      // Property keyframes
       y: [
         { to: '-2.75rem', ease: 'outExpo', duration: 600 },
         { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
       ],
+      // Property specific parameters
       rotate: {
         from: '1turn',
         delay: 0
       },
-      delay: (_, i) => i * 120 + 1000, // Offset to create a wave effect
+      delay: (_, i) => i * 50 + 500, // Function based value with offset
       ease: 'inOutCirc',
-      loopDelay: 3000,
+      loopDelay: 1000,
       loop: true
     });
   }, []);
