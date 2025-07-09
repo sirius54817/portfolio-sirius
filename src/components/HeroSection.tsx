@@ -171,7 +171,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="cyber-text text-gradient">
+          <div className="cyber-text text-foreground">
             {'Cybersecurity & Linux'.split('').map((char, index) => (
               <span key={index} className="inline-block">
                 {char === ' ' ? '\u00A0' : char}
