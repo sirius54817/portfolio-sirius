@@ -1,7 +1,9 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Github, Shield, Terminal } from 'lucide-react';
 import heroBg from '@/assets/hero-bg.jpg';
+import { animate } from 'animejs';
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -10,6 +12,41 @@ const HeroSection = () => {
       block: 'start'
     });
   };
+
+  // Initialize anime.js animations after component mounts
+  React.useEffect(() => {
+    // Animate the first line "Cybersecurity & Linux"
+    animate('.cyber-text span', {
+      y: [
+        { to: '-2.75rem', ease: 'outExpo', duration: 600 },
+        { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+      ],
+      rotate: {
+        from: '-1turn',
+        delay: 0
+      },
+      delay: (_, i) => i * 100,
+      ease: 'inOutCirc',
+      loopDelay: 3000,
+      loop: true
+    });
+
+    // Animate the second line "Full-Stack Developer"
+    animate('.fullstack-text span', {
+      y: [
+        { to: '-2.75rem', ease: 'outExpo', duration: 600 },
+        { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+      ],
+      rotate: {
+        from: '1turn',
+        delay: 0
+      },
+      delay: (_, i) => i * 120 + 1000, // Offset to create a wave effect
+      ease: 'inOutCirc',
+      loopDelay: 3000,
+      loop: true
+    });
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -66,9 +103,21 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="text-gradient">Cybersecurity & Linux</span>
+          <div className="cyber-text text-gradient">
+            {'Cybersecurity & Linux'.split('').map((char, index) => (
+              <span key={index} className="inline-block">
+                {char === ' ' ? '\u00A0' : char}
+              </span>
+            ))}
+          </div>
           <br />
-          <span className="text-foreground">Full-Stack Developer</span>
+          <div className="fullstack-text text-foreground">
+            {'Full-Stack Developer'.split('').map((char, index) => (
+              <span key={index} className="inline-block">
+                {char === ' ' ? '\u00A0' : char}
+              </span>
+            ))}
+          </div>
         </motion.h1>
 
         <motion.p
